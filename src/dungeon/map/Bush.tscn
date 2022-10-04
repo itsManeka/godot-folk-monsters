@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/map/Bush.png" type="Texture" id=1]
+[ext_resource path="res://src/dungeon/map/MapItem.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.61801
+height = 9.70659
+
+[node name="Bush" instance=ExtResource( 2 )]
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2( -0.595817, 4.17075 )
+scale = Vector2( 0.174376, 0.234635 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.27055, -8.65765 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( -0.532497, 0.135283 )
+rotation = 1.5708
+shape = SubResource( 1 )

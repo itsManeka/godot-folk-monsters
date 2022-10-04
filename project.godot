@@ -1,0 +1,216 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Control",
+"class": "ActionMenu",
+"language": "GDScript",
+"path": "res://src/battle/combat/interface/ActionMenu.gd"
+}, {
+"base": "Node",
+"class": "BattleManager",
+"language": "GDScript",
+"path": "res://src/battle/combat/manager/BattleManager.gd"
+}, {
+"base": "Position2D",
+"class": "Battler",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/battlers/Battler.gd"
+}, {
+"base": "Node2D",
+"class": "CombatArena",
+"language": "GDScript",
+"path": "res://src/battle/combat/CombatArena.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemie",
+"language": "GDScript",
+"path": "res://src/dungeon/enemies/Enemie.gd"
+}, {
+"base": "Resource",
+"class": "EnemyBox",
+"language": "GDScript",
+"path": "res://src/dungeon/enemies/resource/EnemyBox.gd"
+}, {
+"base": "Resource",
+"class": "EnemyRes",
+"language": "GDScript",
+"path": "res://src/dungeon/enemies/resource/EnemyRes.gd"
+}, {
+"base": "Object",
+"class": "Enums",
+"language": "GDScript",
+"path": "res://src/utils/Enums.gd"
+}, {
+"base": "Control",
+"class": "Hit",
+"language": "GDScript",
+"path": "res://src/battle/combat/interface/Hit.gd"
+}, {
+"base": "Node",
+"class": "IA",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/auxscripts/IA.gd"
+}, {
+"base": "Resource",
+"class": "MonsterData",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/stats/MonsterData.gd"
+}, {
+"base": "Node2D",
+"class": "MonsterFactory",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/factory/MonsterFactory.gd"
+}, {
+"base": "Control",
+"class": "PlayerBar",
+"language": "GDScript",
+"path": "res://src/battle/combat/interface/PlayerBar.gd"
+}, {
+"base": "Node",
+"class": "RandomStats",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/auxscripts/RandomStats.gd"
+}, {
+"base": "Control",
+"class": "SelectionRect",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/battlers/resources/SelectionRect.gd"
+}, {
+"base": "Resource",
+"class": "Skill",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/skill/Skill.gd"
+}, {
+"base": "Control",
+"class": "SkillButton",
+"language": "GDScript",
+"path": "res://src/battle/combat/interface/SkillButton.gd"
+}, {
+"base": "Resource",
+"class": "SkillFactory",
+"language": "GDScript",
+"path": "res://src/battle/combat/monster/skill/SkillFactory.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Tank",
+"language": "GDScript",
+"path": "res://src/dungeon/player/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Treasure",
+"language": "GDScript",
+"path": "res://src/dungeon/map/Treasure.gd"
+}, {
+"base": "YSort",
+"class": "TurnQueue",
+"language": "GDScript",
+"path": "res://src/battle/combat/turnQueue/TurnQueue.gd"
+} ]
+_global_script_class_icons={
+"ActionMenu": "",
+"BattleManager": "",
+"Battler": "",
+"CombatArena": "",
+"Enemie": "",
+"EnemyBox": "",
+"EnemyRes": "",
+"Enums": "",
+"Hit": "",
+"IA": "",
+"MonsterData": "",
+"MonsterFactory": "",
+"PlayerBar": "",
+"RandomStats": "",
+"SelectionRect": "",
+"Skill": "",
+"SkillButton": "",
+"SkillFactory": "",
+"Tank": "",
+"Treasure": "",
+"TurnQueue": ""
+}
+
+[application]
+
+config/name="Folk Monsters"
+run/main_scene="res://src/dungeon/dungeon/DG.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://src/utils/Global.gd"
+
+[display]
+
+window/size/width=768
+window/size/height=576
+window/size/test_width=800
+window/size/test_height=600
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+mouse_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="SoftCollisions"
+2d_physics/layer_5="Treasure"
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/dungeon/map/MapItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/map/Chest.png" type="Texture" id=2]
+[ext_resource path="res://src/dungeon/map/Treasure.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 192, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 384, 192, 192 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": false,
+"name": "open",
+"speed": 15.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 4.4573
+height = 17.6951
+
+[node name="Treasure" instance=ExtResource( 1 )]
+collision_layer = 17
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2( -0.521787, 0.253968 )
+scale = Vector2( 0.204385, 0.243246 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0, -13 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 9 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( -0.583977, -1.45995 )
+rotation = 1.5708
+shape = SubResource( 10 )

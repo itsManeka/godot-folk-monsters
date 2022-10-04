@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/battle/combat/monster/battlers/resources/SelectionRect.gd" type="Script" id=1]
+
+[node name="SelectionRect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -734.0
+margin_bottom = -535.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="." to="." method="on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="on_mouse_in"]
+[connection signal="mouse_exited" from="." to="." method="on_mouse_out"]

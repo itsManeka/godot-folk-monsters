@@ -1,0 +1,349 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://assets/enemies/caboclo/sprite.png" type="Texture" id=1]
+[ext_resource path="res://src/dungeon/overlap/PlayerDetectionZone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/dungeon/overlap/SoftCollision.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/monsters/misc/shadow.png" type="Texture" id=4]
+[ext_resource path="res://src/dungeon/enemies/Enemie.gd" type="Script" id=5]
+[ext_resource path="res://src/dungeon/enemies/resource/WanderController.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/dungeon/enemies/resource/EnemyBox.gd" type="Script" id=7]
+[ext_resource path="res://src/dungeon/enemies/resource/EnemyRes.gd" type="Script" id=8]
+[ext_resource path="res://src/battle/combat/monster/stats/MonsterData.gd" type="Script" id=10]
+
+[sub_resource type="Resource" id=26]
+script = ExtResource( 10 )
+skills_name = [ 1, 4 ]
+name = "Teste"
+level = 5
+stats = {
+"atk": 20,
+"def": 15,
+"hp": 80,
+"hp_max": 80,
+"mp": 50,
+"mp_max": 50,
+"spd": 12
+}
+
+[sub_resource type="Resource" id=27]
+script = ExtResource( 8 )
+node_name = "Golem"
+monster_data = SubResource( 26 )
+
+[sub_resource type="Resource" id=28]
+script = ExtResource( 7 )
+enemy_resource = [ SubResource( 27 ) ]
+
+[sub_resource type="Animation" id=29]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6, -30 ), Vector2( -6, -37 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 16, 17 ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 15 ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 18, 19 ]
+}
+
+[sub_resource type="Animation" id=34]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=36]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=37]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "idle_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=17]
+resource_local_to_scene = true
+blend_point_0/node = SubResource( 13 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 14 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 15 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 16 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "run_left"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "run_down"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "run_right"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "run_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=22]
+resource_local_to_scene = true
+blend_point_0/node = SubResource( 18 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 19 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 20 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 21 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachine" id=25]
+states/idle/node = SubResource( 17 )
+states/idle/position = Vector2( 467, 149 )
+states/run/node = SubResource( 22 )
+states/run/position = Vector2( 628, 149 )
+transitions = [ "idle", "run", SubResource( 23 ), "run", "idle", SubResource( 24 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
+
+[sub_resource type="CapsuleShape2D" id=39]
+radius = 6.29572
+height = 2.94313
+
+[sub_resource type="CircleShape2D" id=40]
+radius = 79.9233
+
+[sub_resource type="CapsuleShape2D" id=41]
+radius = 6.29573
+height = 2.00528
+
+[node name="Enemie" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 5 )
+enemy_box = SubResource( 28 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hey! = SubResource( 29 )
+anims/idle_down = SubResource( 30 )
+anims/idle_left = SubResource( 31 )
+anims/idle_right = SubResource( 32 )
+anims/idle_up = SubResource( 33 )
+anims/run_down = SubResource( 34 )
+anims/run_left = SubResource( 35 )
+anims/run_right = SubResource( 36 )
+anims/run_up = SubResource( 37 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 25 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 38 )
+parameters/idle/blend_position = Vector2( -0.229205, -0.587931 )
+parameters/run/blend_position = Vector2( 0.998152, 0.0189655 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( -0.248437, 3.92897 )
+scale = Vector2( 0.0839138, 0.179062 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -10.6766 )
+texture = ExtResource( 1 )
+vframes = 5
+hframes = 4
+frame = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.323532, -0.647072 )
+rotation = 1.57079
+shape = SubResource( 39 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+position = Vector2( 1.52588e-05, 0 )
+shape = SubResource( 40 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2( -0.647064, -0.323532 )
+rotation = 1.5708
+shape = SubResource( 41 )
+
+[node name="WanderController" parent="." instance=ExtResource( 6 )]
+wander_range = 64
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -6.0
+margin_top = -30.0
+margin_right = 6.0
+margin_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
+custom_constants/shadow_offset_x = 0
+text = "!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
+
+[editable path="PlayerDetectionZone"]
+
+[editable path="SoftCollision"]

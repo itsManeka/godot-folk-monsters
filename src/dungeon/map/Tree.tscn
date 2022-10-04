@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/map/Tree.png" type="Texture" id=1]
+[ext_resource path="res://src/dungeon/map/MapItem.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 3.64862
+height = 13.1199
+
+[node name="Tree" instance=ExtResource( 2 )]
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2( -0.161752, 1.29414 )
+scale = Vector2( 0.21234, 0.289805 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( -1.66893e-06, -24.8638 )
+scale = Vector2( 1.2, 1.2 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( 0.436779, -0.323471 )
+rotation = 1.5708
+shape = SubResource( 2 )
